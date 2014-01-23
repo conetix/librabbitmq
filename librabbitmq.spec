@@ -1,13 +1,13 @@
 Name            : librabbitmq
 Version         : 0.3.0
-Release         : 1.20120620git83c5c6a2
+Release         : 1.2.1
 Summary         : RabbitMQ C AMQP client library
 Group           : Development/Libraries
 
 Source0         : %{name}-%{version}.tar.gz
 URL             : https://github.com/alanxz/rabbitmq-c
 License         : MIT
-Packager        : Matt Dainty <matt@bodgit-n-scarper.com>
+Packager        : Tim Butler <support@conetix.com.au>
 
 BuildRoot       : %{_tmppath}/%{name}-%{version}-root
 %if %{?el5:1}0
@@ -43,6 +43,7 @@ built using librabbitmq.
 %setup -q
 
 %build
+autoreconf -i
 %configure --enable-static
 %{__make} %{?_smp_mflags}
 
@@ -74,6 +75,9 @@ built using librabbitmq.
 %doc %{_mandir}/man7/librabbitmq-tools.7.gz
 
 %changelog
+* Thu Jan 23 2014 Tim Butler <support@conetix.com.au> 0.2.1
+- Make the build work for our environments
+
 * Wed Jun 20 2012 Matt Dainty <matt@bodgit-n-scarper.com> 0.2.0-1.20120620git83c5c6a2
 - Bump to 0.2.0-1.20120620git83c5c6a2.
 
