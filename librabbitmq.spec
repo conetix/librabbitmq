@@ -17,6 +17,9 @@ BuildRequires   : python-simplejson
 BuildRequires   : popt-devel
 %endif
 BuildRequires   : xmlto
+BuildRequires   : autoconf
+BuildRequires   : automake
+BuildRequires   : libtool
 
 %description
 RabbitMQ C AMQP client library
